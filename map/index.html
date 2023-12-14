@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script src="../js/js.js"></script>
+
+<!-- mapbox start -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+<!-- mapbox end -->
+    <title>Tokyo Local - Map</title>
+
+
+</head>
+
+<body>
+
+    <header>
+        <a href="../">
+            <h1>Tokyo Local</h1>
+        </a>
+        <nav id="topNav">
+            <a href="#">
+                <div class="iconBox">
+                    <img class="headerIcon" src="../images/icon_map.svg" alt="">
+                    <br>map
+                </div>
+            </a>
+            <div class="iconBox">
+                <img class="headerIcon" src="../images/icon_heart_stroke.svg" alt="">
+                <br>favourites
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- mapbox start -->
+<div id='map' style='width: 100%; height: 100vh;'></div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1Ijoia29zZWlva2kxMjI1IiwiYSI6ImNscTR4NWVrcjBkZjAya251cjNxNXZldjkifQ.C7-RdmZtjiSsgsV_-M3JKw';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+  });
+</script>
+
+<!-- mapbox end -->
+
+</body>
+
+
+
+
+</html>

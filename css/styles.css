@@ -4,7 +4,7 @@
     --text: #443635;
     --lightText: #706d6d;
     --accent: #843a1b;
-    --input: #d9d9d9;
+    --input: #ffffff;
     font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     margin: 0;
     padding: 0;
@@ -39,7 +39,7 @@ h1 {
     font-style: normal;
 
     /* original: 24px */
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     /* border: blue 1px solid; */
 }
 
@@ -47,15 +47,17 @@ h1 {
 /* used for elevator pitch, restaurant title, "Explore" */
 h2 {
     /* original: 20px */
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
 /* used for subheading in a restaurant page */
 h3 {
     /* original: 18px */
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
 /* used for titles of reviews */
@@ -63,76 +65,114 @@ h4 {
     font-weight: bold;
 }
 
+button {
+    height: 44px;
+    max-width: 325px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
 
 /* CTA button, the heavy one */
 .heavyButton {
     border: none;
     background-color: var(--accent);
     color: var(--background);
-    height: 44px;
-    max-width: 325px;
-    width: 100%;
-    border-radius: 10px;
-    font-size: 1rem;
+
 }
 
 /* CTA button, the light one */
 .lightButton {
     border: var(--accent) 1.5px solid;
     background-color: var(--background);
-    height: 44px;
-    max-width: 325px;
+
+}
+
+.underlineLink {
+    text-decoration: underline;
+}
+
+/* text input */
+input {
     width: 100%;
     border-radius: 10px;
+    background-color: var(--input);
+    color: var(--lightText);
     font-size: 1rem;
+    border: var(--lightText) 1px solid;
+    height: 40px;
+    padding-left: 20px;
+}
+
+/* text form for long messages */
+textarea {
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--input);
+    color: var(--lightText);
+    font-size: 1rem;
+    border: var(--lightText) 1px solid;
+    height: 300px;
+    padding-left: 20px;
+    padding-top: 20px;
 }
 
 
 /* fixed header */
 header {
-    /* margin for mobile devices */
-    margin-top: 45px;
-    height: 70px;
+    /* fixed position */
+    z-index: 999;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 115px;
+    background-color: var(--background);
     /* border: red 1px solid; */
+
+    /* margin for both sides (width 80%) */
+    padding: 0 7.5% 0 7.5%;
+
+    /* padding for mobile devices */
+    padding-top: 45px;
+
 
     /* put the title and navigations on the both sides */
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-
-    /* put the margins both sides */
-    position: relative;
-    width: 85%;
-    left: 50%;
-    transform: translate(-50%, 0);
 }
 
 /* the main part of the page */
 main {
-    /* put the margins both sides */
-    position: relative;
-    width: 85%;
-    left: 50%;
-    transform: translate(-50%, 0);
+    /* put the margins both sides (80%) and header (115+30px) */
+    margin: 145px 7.5% 0 7.5%;
+}
 
-    /* for tha sake of responsive design (divide into 2 chunks) */
-    justify-content: space-between;
-    display: flex;
-    flex-wrap: wrap;
+/* main, but divides the sections inside it */
+#divider {
+    display: block;
+    /* flex-wrap: wrap; */
 }
 
 /* two boxes on restaurant pages, to divide the entire page into 2 chunks (responsive) */
 #dividedByTwo {
-    border: black 2px solid;
-    flex-grow: 1;
-    /* width: 100%; */
-    /* min-width: 200px; */
-
-    /* margin-right: 30px; */
+    /* border: black 2px solid; */
+    margin: 0 0 30px 0;
+    /* width: 50%; */
+    /* flex-grow: 1; */
+    /* width: 50%; */
+    /* min-width: 300px; */
+    /* margin: 20px; */
 }
 
 
+
+/* define space between sections */
+.blocks {
+    margin-bottom: 30px;
+}
 
 
 
@@ -162,12 +202,22 @@ main {
 }
 
 
+ul {
+    list-style-position: inside;
+}
+
 
 
 
 /* the section on the top page, with a background image and some nice copies*/
 #elevatorPitchCover {
+
     height: 282px;
+
+    /* unoverride on header (main handles this) */
+    margin-top: 115px;
+    margin-bottom: -115px;
+    
     /* border: green 1px solid; */
     /* text color = white */
     color: var(--background);
@@ -189,16 +239,7 @@ main {
 
 
 
-input {
-    height: 39px;
-    border-radius: 10px;
-    width: 100%;
-    background-color: var(--input);
-    color: var(--lightText);
-    border: none;
-    margin: 40px 0 40px 0;
-    padding-left: 15px;
-}
+
 
 /* the line includes the title of the each page and sort, filters */
 .headingAndFilters {
@@ -224,6 +265,10 @@ input {
 #restaurantList {
     margin: 0 -10px 0 -10px;
     border: red 1px solid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
 }
 
 /* each thumbnails of a restaurant */
@@ -231,17 +276,78 @@ input {
     border-radius: 10px;
     border: black 1px solid;
     margin: 10px;
-    max-width: 200px;
+    width: 160px;
+
+    height: 160px;
+    /* flex-grow: 1; */
+
 }
 
 /* report problem part */
 footer {
+    width: 100%;
     margin: 40px 0 40px 0;
-    text-align: center;
 }
 
 
+/* swiper */
 .swiper {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    aspect-ratio : 1 / 1;
+    --swiper-pagination-color: var(--text);
+    border-radius: 10px;
+
+    max-width: 500px;
+
+
+  }
+
+  /* the images inside */
+  .cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+
+/* star rating */
+   .rate i, .rate i:hover ~ i {
+    padding-right: 10px;
+    font-size: 2rem;
+    color:var(--background);
+    text-shadow: none;
+    -webkit-text-stroke: 3px var(--text);
+  }
+  
+  .rate:hover i {
+    color: var(--text);
+  }
+  
+  .rate i {
+    cursor: pointer;
+    font-style: normal;
+  }
+
+
+
+  /* when the screen is bigger than 950px, restanrant page goes with 2 columns */
+@media only screen and (min-width: 950px) {
+    #divider {
+      /* background-color: lightblue; */
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #dividedByTwo {
+        flex-grow: 1;
+        margin: 0 40px 0 0;
+        width: 40%;
+    }
+
+    /* swiper sticky */
+    .swiper {
+        position: sticky !important;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
   }

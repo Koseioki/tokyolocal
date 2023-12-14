@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../css/styles.css" />
-    
+
     <title>Tokyo Local - Sakae Sushi</title>
+    
 
     <!-- install swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -34,93 +35,118 @@
     </header>
 
     <!-- the content -->
-    <main>
+    <main id="divider">
+
+
 
         <section id="dividedByTwo">
-
             <!-- Slider main container -->
             <div class="swiper">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
-                    <div class="swiper-slide"><img src="../../images/sakae_sushi_1.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="../../images/sakae_sushi_2.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="../../images/sakae_sushi_3.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="../../images/sakae_sushi_4.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="../../images/sakae_sushi_5.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="../../images/sakae_sushi_6.JPG" alt=""></div>
-                    
+                    <div class="swiper-slide"><img class="cover" src="../../images/sakae_sushi_1.JPG" alt=""></div>
+                    <div class="swiper-slide"><img class="cover" src="../../images/sakae_sushi_2.JPG" alt=""></div>
+                    <div class="swiper-slide"><img class="cover" src="../../images/sakae_sushi_3.JPG" alt=""></div>
+                    <div class="swiper-slide"><img class="cover" src="../../images/sakae_sushi_4.JPG" alt=""></div>
+                    <div class="swiper-slide"><img class="cover" src="../../images/sakae_sushi_5.JPG" alt=""></div>
+                    <div class="swiper-slide"><img class="cover" src="../../images/sakae_sushi_6.JPG" alt=""></div>
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
 
                 <!-- If we need navigation buttons -->
-                <!-- <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div> -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
 
                 <!-- If we need scrollbar -->
                 <div class="swiper-scrollbar"></div>
             </div>
+            </section>
+
+
+
+
 
     
-
-
-        </section>
 
 
 
 
 
         <section id="dividedByTwo">
-            <h2>Sakae Sushi</h2>
-            <p>Sushi restaurant</p>
-            stars
-            <div>the line thing</div>
-            <div>the line thing</div>
+            <section class="blocks">
+                <h2>Sakae Sushi</h2>
+                <p>Sushi restaurant</p>
+                stars
+            </section>
 
-            <h3>Good to know</h3>
-            <ul>
-                <li>Under 20-year-old not allowed</li>
-                <li>Enkai(party) OK</li>
-                <li>Reservation required</li>
-                <li>Good for drinking and smoking</li>
-                <li>English not available</li>
-            </ul>
+            <section class="blocks">
+                <img src="../../images/price1.png" alt="" style="width: 312px;">
+                <img src="../../images/casual1.png" alt="" style="width: 312px;">
+            </section>
 
-            <h3>Opening hours</h3>
-            <p>Everyday</p>
-            <p>11:30 -14:00, 17:00 - 23:00</p>
+            <section class="blocks">
+                <h3>Good to know</h3>
+                <ul>
+                    <li>Under 20-year-old not allowed</li>
+                    <li>Enkai(party) OK</li>
+                    <li>Reservation required</li>
+                    <li>Good for drinking and smoking</li>
+                    <li>English not available</li>
+                </ul>
 
-            <h3>Address</h3>
-            <p>1 Chome-24-3 Setagaya, Setagaya City, Tokyo 154-0017</p>
-            google map
+            </section>
 
-            <h3>Reviews</h3>
-            <h4>Nice atmosphere</h4>
-            <p>This restaurant's got such a vibe, and the owner is super personal and sweet</p>
+            <section class="blocks">
+                <h3>Opening hours</h3>
+                <p>Everyday</p>
+                <p>11:30 -14:00, 17:00 - 23:00</p>
+            </section>
 
-            <button class="lightButton">Write a review</button>
+            <section class="blocks">
+                <h3>Address</h3>
+                <p>1 Chome-24-3 Setagaya, Setagaya City, Tokyo 154-0017</p>
+                <p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202.65135778204584!2d139.64651468587576!3d35.641979983101166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f381685b343f%3A0x9b31950f26fbd232!2s1-ch%C5%8Dme-24-3%20Setagaya%2C%20Setagaya%20City%2C%20Tokyo%20154-0017%2C%20Japan!5e0!3m2!1sen!2sdk!4v1702551086936!5m2!1sen!2sdk" width="100%" height="300px" style="border:0; border-radius: 10px; max-width: 325px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </p>
+            </section>
 
+            <section class="blocks">
+                <h3>Reviews</h3>
+                <h4>Nice atmosphere</h4>
+                <p>This restaurant's got such a vibe, and the owner is super personal and sweet</p>
+                <br>
+                <a href="../../review/">
+                <button class="lightButton">Write a review</button>
+                </a>
+            </section>
 
-            <h3>Comments</h3>
-            <h4>Payment</h4>
-            <p>Hi! do they accept mobilepay?</p>
+            <section class="blocks">
+                <h3>Comments</h3>
+                <h4>Payment</h4>
+                <p>Hi! do they accept mobilepay?</p>
+                <h4>No</h4>
+                <p>How come they do</p>
+                <br>
+                <button class="lightButton">Write a comment</button>
+            </section>
 
-            <button class="lightButton">Write a comment</button>
+            <section class="blocks">
+                <h3>Contact</h3>
 
-            <h3>Contact</h3>
-
-            <button class="heavyButton">Call +81 3-3420-1371</button>
+                <button class="heavyButton">Call +81 3-3420-1371</button>
+            </section>
 
             <footer>
                 <p>Is somthing wrong?</p>
-                <a href="#">Report a problem</a>
+                <a class="underlineLink" href="#">Report a problem</a>
             </footer>
         </section>
     </main>
 
 </body>
-
 <script src="../../js/js.js"></script>
+
 
 </html>
