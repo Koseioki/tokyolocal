@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <script src="js/js.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script src="../js/js.js"></script>
     <title>Tokyo Local</title>
 
 
@@ -18,32 +18,34 @@
             <h1>Tokyo Local</h1>
         </a>
         <nav id="topNav">
-            <a href="map/">
+            <a href="../map/">
                 <div class="iconBox">
-                    <img class="headerIcon" src="images/icon_map.svg" alt="">
+                    <img class="headerIcon" src="../images/icon_map.svg" alt="">
                     <br>map
                 </div>
             </a>
             <div class="iconBox">
-                <img class="headerIcon" src="images/icon_heart_stroke.svg" alt="">
+                <img class="headerIcon" src="../images/icon_heart_stroke.svg" alt="">
                 <br>favourites
             </div>
         </nav>
     </header>
 
 
-    <!-- elevator pitch with background image -->
-    <section id="elevatorPitchCover">
-        <article id="elevatorPitch">
-            <h2>Taste Tokyo like a local</h2>
-            <p>You will find non-touristic, authentic, local-based restaurants</p>
-            <button class="lightButton">Explore now</h2>
-        </article>
-    </section>
 
     <main>
 
 
+        <!-- sidebar -->
+        <aside id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </aside>
+
+        <button class="openbtn" onclick="openNav()">aa</button>
 
 
         <!-- search bar -->
@@ -60,17 +62,18 @@
 
                 <!-- filters, as buttons -->
                 <button class="filterIconAndName">
-                    <img class="filterIcon" src="images/icon_sort.svg" alt="">
+                    <img class="filterIcon" src="../images/icon_sort.svg" alt="">
                     Sort
                 </button>
-                <button class="filterIconAndName">
-                    <img class="filterIcon" src="images/icon_filters.svg" alt="">
+                <button class="filterIconAndName" lass="openbtn" onclick="openNav()">
+                    <img class="filterIcon" src="../images/icon_filters.svg" alt="">
                     Filters
                 </button>
 
             </nav>
         </section>
 
+        <!-- thumbnails -->
         <section id="restaurantList">
             <article class="thumbnails">restaurant 1</article>
             <article class="thumbnails">restaurant 2</article>

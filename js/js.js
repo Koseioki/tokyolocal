@@ -38,3 +38,15 @@ const swiper = new Swiper('.swiper', {
     el: '.swiper-scrollbar',
   },
 });
+
+
+// sidebar
+function openNav() {
+  document.getElementById("mySidebar").style.width = "280px";
+  document.getElementById("main").style.marginLeft = "280px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}

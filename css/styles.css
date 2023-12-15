@@ -1,9 +1,11 @@
 /* define the colour palette and type face */
 * {
     --background: #efefef;
+    --darkBackground: #d5d5d5;
     --text: #443635;
     --lightText: #706d6d;
     --accent: #843a1b;
+    --accentHover: #aa7058;
     --input: #ffffff;
     font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     margin: 0;
@@ -66,26 +68,43 @@ h4 {
 }
 
 button {
-    height: 44px;
-    max-width: 325px;
-    width: 100%;
-    border-radius: 10px;
-    font-size: 1rem;
-    cursor: pointer;
+
 }
 
 /* CTA button, the heavy one */
 .heavyButton {
+    height: 44px;
+    /* max-width: 325px; */
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
     border: none;
     background-color: var(--accent);
     color: var(--background);
+    /* transition: 0.3s; */
+}
 
+.heavyButton:hover {
+    background-color: var(--accentHover);
+    /* font-weight: bold; */
 }
 
 /* CTA button, the light one */
 .lightButton {
+    height: 44px;
+    /* max-width: 325px; */
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
     border: var(--accent) 1.5px solid;
     background-color: var(--background);
+    /* transition: 0.3s; */
+}
+
+.lightButton:hover {
+    background-color: var(--darkBackground);
 
 }
 
@@ -93,17 +112,40 @@ button {
     text-decoration: underline;
 }
 
-/* text input */
-input {
+.underlineLink:hover {
+    color: var(--lightText);
+}
+
+
+/* a box for search bar: text input and search button */
+#searchBar {
+    display: block;
+    /* border: 2px black solid; */
+}
+
+/* input form for search bar */
+#searchInput {
     width: 100%;
     border-radius: 10px;
     background-color: var(--input);
     color: var(--lightText);
     font-size: 1rem;
     border: var(--lightText) 1px solid;
-    height: 40px;
+    height: 44px;
     padding-left: 20px;
 }
+
+/* heavybutton, but for search */
+#searchButton {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 10px 0 0 0;
+}
+
+
+
+/* text input */
+input {}
 
 /* text form for long messages */
 textarea {
@@ -122,7 +164,7 @@ textarea {
 /* fixed header */
 header {
     /* fixed position */
-    z-index: 999;
+    z-index: 2;
     position: fixed;
     top: 0px;
     width: 100%;
@@ -142,6 +184,16 @@ header {
     justify-content: space-between;
     align-items: center;
 
+}
+
+#backButton {
+
+    display: none;
+
+}
+
+#backButton:hover {
+    background-color: var(--darkBackground);
 }
 
 /* the main part of the page */
@@ -171,7 +223,7 @@ main {
 
 /* define space between sections */
 .blocks {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 
@@ -193,6 +245,7 @@ main {
 
     /* space between 2 icons */
     margin-left: 10px;
+    cursor: pointer;
 }
 
 /* the actual icons in the header*/
@@ -217,7 +270,7 @@ ul {
     /* unoverride on header (main handles this) */
     margin-top: 115px;
     margin-bottom: -115px;
-    
+
     /* border: green 1px solid; */
     /* text color = white */
     color: var(--background);
@@ -246,28 +299,48 @@ ul {
     /* border: red 1px solid; */
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 40px;
 }
 
-/* sort and filter */
+/* a box includes sort and filter elements */
 #searchNav {
     /* border: purple 1px solid; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+
+/* buttons that have the filter icon and the text "filters" */
+.filterIconAndName {
+    /* margin-left: 10px; */
+    border: var(--lightText) 1px solid;
+    background-color: var(--background);
+    margin: 0 0 5px 5px;
+    /* padding: 6px 8px;  */
+    display: block;
+    width: 100px;
+    /* text-align: center; */
+}
+
+.filterIconAndName:hover {
+    background-color: var(--darkBackground);
 }
 
 /* the sort and filter icons themselves */
 .filterIcon {
     width: 18px;
     height: 20x;
-    margin-left: 10px;
 }
 
 /* the section of the list of the restaurants, should be wrapped */
 #restaurantList {
-    margin: 0 -10px 0 -10px;
+    margin: 0 -1% 0 -1%;
     border: red 1px solid;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    /* justify-content: space-between */
 
 }
 
@@ -275,79 +348,267 @@ ul {
 .thumbnails {
     border-radius: 10px;
     border: black 1px solid;
-    margin: 10px;
-    width: 160px;
-
-    height: 160px;
+    margin: 1%;
+    /* width: 160px; */
+    width: 23%;
+    /* min-width: 160px; */
+    aspect-ratio: 1 / 1;
+    /* height: 160px; */
     /* flex-grow: 1; */
 
 }
+
+
+/* restaurant pages - add to my favourites button */
+#addToFavourites {
+    background-color: var(--accent);
+    color: var(--background);
+    height: 40px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0 20px;
+    /* line-height: 1rem; */
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#addToFavourites:hover {
+    background-color: var(--accentHover);
+}
+
+/* style the heart icon */
+#addToFavouritesIcon{
+    height: 1rem;
+    filter: invert(100%) sepia(3%) saturate(258%) hue-rotate(224deg) brightness(1200%) contrast(87%);
+    margin-right: 10px;
+}
+
+/* restaurant pages - box for review title, and the date */
+.titleAndDetails {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* style the date */
+#dates {
+    /* margin-left: 30px; */
+    color: var(--lightText);
+    /* font-size: 0.9rem; */
+    /* line-height: 1.5rem; */
+    /* font-style: italic; */
+}
+
 
 /* report problem part */
 footer {
     width: 100%;
     margin: 40px 0 40px 0;
+    text-align: center;
 }
 
+/* restaurant page - map */
+#googlemaps {
+    border:0;
+    border-radius: 10px;
+    width: 100%;
+    /* max-width: 325px; */
+}
 
 /* swiper */
 .swiper {
     width: 100%;
-    aspect-ratio : 1 / 1;
+    aspect-ratio: 1 / 1;
     --swiper-pagination-color: var(--text);
     border-radius: 10px;
 
     max-width: 500px;
+    cursor: pointer;
 
+}
 
-  }
-
-  /* the images inside */
-  .cover {
+/* the images inside */
+.cover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
+}
+
 
 /* star rating */
-   .rate i, .rate i:hover ~ i {
+.rate i,
+.rate i:hover~i {
     padding-right: 10px;
     font-size: 2rem;
-    color:var(--background);
+    color: var(--background);
     text-shadow: none;
     -webkit-text-stroke: 3px var(--text);
-  }
-  
-  .rate:hover i {
+}
+
+.rate:hover i {
     color: var(--text);
-  }
-  
-  .rate i {
+}
+
+.rate i {
     cursor: pointer;
     font-style: normal;
+}
+
+
+
+/* filter sidebar */
+
+.sidebar {
+    height: 100%;
+    /* padding-left: 25px; */
+    /* margin-top: 115px; */
+    width: 0;
+    /* width: px; */
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    background-color: var(--background);
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    border: 1px black solid;
   }
 
+  .sidebar .blocks {
+    padding: 6px 25px 6px 25px;
+  }
+  
+  .sidebar label{
+    /* padding: 8px 8px 8px 32px; */
+    font-size: 1.1rem;
+    /* text-decoration: none; */
+    /* font-size: 25px; */
+    /* color: #818181; */
+    /* display: block; */
+    /* transition: 0.3s; */
+  }
+  
+  .sidebar label:hover {
+    /* color: var(--lightText); */
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  } */
+  
+  /* .openbtn:hover {
+    background-color: #444;
+  } */
+  
+
+  /* sorting dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;}
 
 
-  /* when the screen is bigger than 950px, restanrant page goes with 2 columns */
+
 @media only screen and (min-width: 950px) {
+
+    /* when the screen is bigger than 950px, restanrant page goes with 2 columns */
     #divider {
-      /* background-color: lightblue; */
-      display: flex;
-      flex-wrap: wrap;
+        /* background-color: lightblue; */
+        display: flex;
+        flex-wrap: wrap;
     }
 
     #dividedByTwo {
         flex-grow: 1;
-        margin: 0 40px 0 0;
+        margin: 0 40px 0 40px;
         width: 40%;
     }
 
     /* swiper sticky */
     .swiper {
         position: sticky !important;
-        top: 50%;
+        top: 60%;
         transform: translate(0, -50%);
     }
-  }
+
+
+
+    /* a box for search bar: text input and search button */
+    #searchBar {
+        display: flex;
+
+    }
+
+    /* input form for search bar */
+    #searchInput {
+        width: 100%;
+
+    }
+
+    /* heavybutton, but for search */
+    #searchButton {
+        width: 200px;
+        margin: 0 0 0 10px;
+
+    }
+
+    footer {
+        text-align: left;
+    }
+
+    #backButton {
+
+        display: block;
+        font-weight: bold;
+        position: fixed;
+        border: var(--text) 1px solid;
+        font-size: 1rem;
+        background-color: var(--background);
+        border-radius: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+    
+    }
+
+
+    .lightButton {
+        max-width: 250px;
+    }
+
+    .heavyButton {
+        max-width: 250px;
+    }
+}
+
+

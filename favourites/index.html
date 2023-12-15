@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script src="../js/js.js"></script>
+    <title>Tokyo Local - My favourites</title>
+
+
+</head>
+
+<body>
+
+    <header>
+        <a href="../">
+            <h1>Tokyo Local</h1>
+        </a>
+        <nav id="topNav">
+            <a href="../map/">
+                <div class="iconBox">
+                    <img class="headerIcon" src="../images/icon_map.svg" alt="">
+                    <br>map
+                </div>
+            </a>
+            <a href="#">
+                <div class="iconBox">
+                    <img class="headerIcon" src="../images/icon_heart_stroke.svg" alt="">
+                    <br>favourites
+                </div>
+            </a>
+        </nav>
+    </header>
+
+
+
+    <main>
+
+
+
+
+
+        <!-- sidebar -->
+        <aside id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+            <section class="blocks">
+                <h2>Filters</h2>
+            </section>
+
+            <section class="blocks">
+                <h3>Price</h3>
+                <label for="pricemin">from</label><br>
+                <input type="text" id="pricemin" name="pricemin"><br>
+                <label for="pricemax">to</label><br>
+                <input type="text" id="pricemax" name="pricemax">
+            </section>
+
+            <section class="blocks">
+                <h3>Location</h3>
+                <label for="radius">less than</label><br>
+                <input type="text" id="radius" name="radius"><br>
+                <label for="radius">km from here</label>
+            </section>
+
+            <section class="blocks">
+                <h3>Time</h3>
+                <input type="checkbox" id="time1" name="time1"><label for="time1">Lunch</label><br>
+                <input type="checkbox" id="time2" name="time2"><label for="time2">Dinner</label><br>
+            </section>
+
+            <section class="blocks">
+                <h3>Features</h3>
+                <input type="checkbox" id="features1" name="features1"><label for="features1">First customer
+                    OK</label><br>
+                <input type="checkbox" id="features2" name="features2"><label for="features2">For solo
+                    travellers</label><br>
+                <input type="checkbox" id="features3" name="features3"><label for="features3">For groups</label><br>
+            </section>
+
+            <section class="blocks">
+                <h3>Diet</h3>
+                <input type="checkbox" id="diet1" name="diet1"><label for="diet1">Local ingredients</label><br>
+                <input type="checkbox" id="diet2" name="diet2"><label for="diet2">Halal</label><br>
+                <input type="checkbox" id="diet3" name="diet3"><label for="diet3">Vegetarian</label><br>
+                <input type="checkbox" id="diet4" name="diet4"><label for="diet4">Vegan</label><br>
+                <input type="checkbox" id="diet5" name="diet5"><label for="diet5">Lactose free</label><br>
+            </section>
+
+
+
+            <section class="blocks">
+                <h3>Accessibility</h3>
+                <input type="checkbox" id="accessibility1" name="accessibility1"><label for="accessibility1">Wheelchair
+                    OK</label><br>
+                <input type="checkbox" id="accessibility2" name="accessibility2"><label for="accessibility2">Allergen
+                    information</label><br>
+                <input type="checkbox" id="accessibility3" name="accessibility3"><label for="accessibility3">English
+                    OK</label><br>
+                <input type="checkbox" id="accessibility4" name="accessibility4"><label
+                    for="accessibility4">Children/babies OK</label><br>
+            </section>
+
+            <span style="text-align: center;">
+            <section class="blocks">
+                <a class="underlineLink" href="#">Clear the filters</a><br><br>
+                <button class="heavyButton">Search</button>
+            </section>
+            </span>
+
+        </aside>
+
+        <!-- <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button> -->
+
+
+        <div class="dropdown">
+            <span>Mouse over me</span>
+            <div class="dropdown-content">
+            <p>Hello World!</p>
+            </div>
+          </div>
+
+        <!-- filters -->
+        <section class="headingAndFilters">
+            <h2>My favourites</h2>
+            <!-- 2 filters -->
+            <nav id="searchNav">
+
+                <!-- filters, as buttons -->
+                <button class="filterIconAndName">
+                    <img class="filterIcon" src="../images/icon_sort.svg" alt="">
+                    Sort
+                    
+                </button>
+                <button class="filterIconAndName" onclick="openNav()">
+                    <img class="filterIcon" src="../images/icon_filters.svg" alt="">
+                    Filters
+                </button>
+
+            </nav>
+        </section>
+
+        <!-- thumbnails -->
+        <section id="restaurantList">
+            <article class="thumbnails">restaurant 1</article>
+        </section>
+
+        <footer>
+            <p>Is somthing wrong?</p>
+            <a class="underlineLink" href="#">Report a problem</a>
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
