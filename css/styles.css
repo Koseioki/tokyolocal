@@ -25,6 +25,7 @@ body {
     color: var(--text);
     font-size: 1rem;
     line-height: 1.5rem;
+    scroll-behavior: smooth;
 }
 
 
@@ -67,9 +68,7 @@ h4 {
     font-weight: bold;
 }
 
-button {
-
-}
+button {}
 
 /* CTA button, the heavy one */
 .heavyButton {
@@ -137,15 +136,25 @@ button {
 
 /* heavybutton, but for search */
 #searchButton {
-    max-width: 100%;
     border-radius: 10px;
     margin: 10px 0 0 0;
+
+
 }
 
 
 
-/* text input */
-input {}
+/* text input for title of a review */
+textInput {
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--input);
+    color: var(--lightText);
+    font-size: 1rem;
+    border: var(--lightText) 1px solid;
+    height: 44px;
+    padding-left: 20px;
+}
 
 /* text form for long messages */
 textarea {
@@ -189,6 +198,13 @@ header {
 #backButton {
 
     display: none;
+    font-weight: bold;
+    border: var(--text) 1px solid;
+    font-size: 1rem;
+    background-color: var(--background);
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
 
 }
 
@@ -244,8 +260,17 @@ main {
     text-align: center;
 
     /* space between 2 icons */
-    margin-left: 10px;
+    margin-left: 14px;
     cursor: pointer;
+
+    /* for the sake of dropdown */
+    position: relative;
+    display: inline-block;
+}
+
+.iconBox:hover {
+    text-decoration: underline;
+    filter: contrast(200%);
 }
 
 /* the actual icons in the header*/
@@ -290,6 +315,12 @@ ul {
     text-align: center;
 }
 
+/* exlore now button, inherit light button */
+#exploreNow {
+    width: 250px;
+
+}
+
 
 
 
@@ -313,16 +344,47 @@ ul {
 
 /* buttons that have the filter icon and the text "filters" */
 .filterIconAndName {
-    /* margin-left: 10px; */
+
+    /* height: 44px; */
+
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+
     border: var(--lightText) 1px solid;
     background-color: var(--background);
     margin: 0 0 5px 5px;
-    /* padding: 6px 8px;  */
+    padding: 8px 0;
     display: block;
     width: 100px;
-    /* text-align: center; */
+    text-align: center;
+
+
 }
 
+/* when the sort button is hovered, display the dropdown */
+.filterIconAndName:hover:hover #sorting {
+    display: block;
+}
+
+/* style for sorting dropdown menu */
+#sorting {
+    display: none;
+    position: absolute;
+    background-color: var(--background);
+    border-radius: 10px;
+    filter: none;
+    font-size: 1rem;
+    line-height: 2rem;
+    text-align: left;
+    /* min-width: 160px; */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 20px 40px 20px 30px;
+    margin-top: 12px;
+    z-index: 1;
+}
+
+/* when the filter buttons are hovered, the backgraund colour changes */
 .filterIconAndName:hover {
     background-color: var(--darkBackground);
 }
@@ -336,26 +398,34 @@ ul {
 /* the section of the list of the restaurants, should be wrapped */
 #restaurantList {
     margin: 0 -1% 0 -1%;
-    border: red 1px solid;
+    /* border: red 1px solid; */
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    /* justify-content: space-between */
 
 }
 
 /* each thumbnails of a restaurant */
 .thumbnails {
     border-radius: 10px;
-    border: black 1px solid;
+    /* border: black 1px solid; */
     margin: 1%;
-    /* width: 160px; */
-    width: 23%;
-    /* min-width: 160px; */
-    aspect-ratio: 1 / 1;
-    /* height: 160px; */
-    /* flex-grow: 1; */
+    width: 48%;
+    /* width: 23%; */
+    aspect-ratio: 1 / 1 !important;
+}
 
+/* the image inside */
+.thumbnailImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    cursor: pointer;
+}
+
+.thumbnailImage:hover {
+    filter: opacity(50%);
 }
 
 
@@ -382,7 +452,7 @@ ul {
 }
 
 /* style the heart icon */
-#addToFavouritesIcon{
+#addToFavouritesIcon {
     height: 1rem;
     filter: invert(100%) sepia(3%) saturate(258%) hue-rotate(224deg) brightness(1200%) contrast(87%);
     margin-right: 10px;
@@ -413,17 +483,29 @@ footer {
 
 /* restaurant page - map */
 #googlemaps {
-    border:0;
+    border: 0;
     border-radius: 10px;
     width: 100%;
     /* max-width: 325px; */
 }
 
+#page404{
+    text-align: center;
+    /* border: 1px solid; */
+    width: 100%;
+    position: relative;
+    /* top: 60%; */
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+
 /* swiper */
 .swiper {
     width: 100%;
     aspect-ratio: 1 / 1;
-    --swiper-pagination-color: var(--text);
+    --swiper-pagination-color: var(--background);
+    --swiper-scrollbar-color: var(--background);
     border-radius: 10px;
 
     max-width: 500px;
@@ -436,6 +518,14 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.swiper-button-prev {
+    color: var(--background) !important;
+}
+
+.swiper-button-next {
+    color: var(--background) !important;
 }
 
 
@@ -476,14 +566,15 @@ footer {
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 60px;
-    border: 1px black solid;
-  }
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    /* border: 1px black solid; */
+}
 
-  .sidebar .blocks {
+.sidebar .blocks {
     padding: 6px 25px 6px 25px;
-  }
-  
-  .sidebar label{
+}
+
+.sidebar label {
     /* padding: 8px 8px 8px 32px; */
     font-size: 1.1rem;
     /* text-decoration: none; */
@@ -491,21 +582,35 @@ footer {
     /* color: #818181; */
     /* display: block; */
     /* transition: 0.3s; */
-  }
-  
-  .sidebar label:hover {
+}
+
+.sidebar label:hover {
     /* color: var(--lightText); */
-  }
-  
-  .sidebar .closebtn {
+}
+
+.sidebar .closebtn {
     position: absolute;
     top: 25px;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-  }
-  
-  /* .openbtn {
+}
+
+/* input text in the filter */
+.filterText {
+    width: 70%;
+    border-radius: 10px;
+    background-color: var(--input);
+    color: var(--lightText);
+    font-size: 1rem;
+    border: var(--lightText) 1px solid;
+    height: 30px;
+    padding-left: 10px;
+}
+
+
+
+/* .openbtn {
     font-size: 20px;
     cursor: pointer;
     background-color: #111;
@@ -513,30 +618,44 @@ footer {
     padding: 10px 15px;
     border: none;
   } */
-  
-  /* .openbtn:hover {
+
+/* .openbtn:hover {
     background-color: #444;
   } */
-  
 
-  /* sorting dropdown */
-  .dropdown {
+
+/* dropdown */
+/* .dropdown {
     position: relative;
     display: inline-block;
-  }
-  
-  .dropdown-content {
+}  */
+
+/* style for dropdown menu */
+.dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
+    background-color: var(--background);
+    filter: none;
+    font-size: 1rem;
+    line-height: 2rem;
+    text-align: left;
+    /* min-width: 160px; */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
     z-index: 1;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;}
+}
+
+/* when the p is hovered */
+.dropdown-content p:hover  {
+    color: var(--lightText);
+}
+
+/* icon hovered */
+.iconBox:hover .dropdown-content {
+    display: block;
+}
+
+
 
 
 
@@ -578,27 +697,21 @@ footer {
 
     /* heavybutton, but for search */
     #searchButton {
-        width: 200px;
+        width: 205px;
         margin: 0 0 0 10px;
 
     }
 
-    footer {
+    /* footer {
         text-align: left;
-    }
+    } */
 
     #backButton {
 
         display: block;
-        font-weight: bold;
         position: fixed;
-        border: var(--text) 1px solid;
-        font-size: 1rem;
-        background-color: var(--background);
-        border-radius: 10px;
-        padding: 10px 20px;
-        cursor: pointer;
-    
+
+
     }
 
 
@@ -609,6 +722,10 @@ footer {
     .heavyButton {
         max-width: 250px;
     }
+
+    .thumbnails {
+        width: 23%;
+        aspect-ratio: 1 / 1 !important;
+    }
+
 }
-
-

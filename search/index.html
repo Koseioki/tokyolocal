@@ -21,73 +21,169 @@
             <a href="../map/">
                 <div class="iconBox">
                     <img class="headerIcon" src="../images/icon_map.svg" alt="">
-                    <br>map
+                    <br>Map
                 </div>
             </a>
+            <a href="../favourites/">
+                <div class="iconBox">
+                    <img class="headerIcon" src="../images/icon_heart_stroke.svg" alt="">
+                    <br>Favourites
+                </div>
+            </a>
+
             <div class="iconBox">
-                <img class="headerIcon" src="../images/icon_heart_stroke.svg" alt="">
-                <br>favourites
+                <img class="headerIcon" src="../images/icon_language.svg" alt=""><br>
+                Language
+                <div class="dropdown-content">
+                    <a href="../404.html">
+                        <p>日本語</p>
+                    </a>
+                    <a href="#">
+                        <p>English</p>
+                    </a>
+                </div>
             </div>
+
         </nav>
     </header>
 
-
-
     <main>
+
+
 
 
         <!-- sidebar -->
         <aside id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
+
+            <section class="blocks">
+                <h2>Filters</h2>
+            </section>
+
+            <section class="blocks">
+                <h3>Price</h3>
+                <label for="pricemin">from</label><br>
+                <input type="text" class="filterText" id="pricemin" name="pricemin" placeholder="2,000"> JPY<br>
+                <label for="pricemax">to</label><br>
+                <input type="text" class="filterText" id="pricemax" name="pricemax" placeholder="3,000"> JPY
+            </section>
+
+            <section class="blocks">
+                <h3>Location</h3>
+                <label for="radius">less than</label><br>
+                <input type="text" id="radius" name="radius" class="filterText" placeholder="5">
+                <label for="radius">km<br>from here</label>
+            </section>
+
+            <section class="blocks">
+                <h3>Time</h3>
+                <input type="checkbox" id="time1" name="time1"><label for="time1">Lunch</label><br>
+                <input type="checkbox" id="time2" name="time2"><label for="time2">Dinner</label><br>
+            </section>
+
+            <section class="blocks">
+                <h3>Features</h3>
+                <input type="checkbox" id="features1" name="features1"><label for="features1">First customer
+                    OK</label><br>
+                <input type="checkbox" id="features2" name="features2"><label for="features2">For solo
+                    travellers</label><br>
+                <input type="checkbox" id="features3" name="features3"><label for="features3">For groups</label><br>
+            </section>
+
+            <section class="blocks">
+                <h3>Diet</h3>
+                <input type="checkbox" id="diet1" name="diet1"><label for="diet1">Local ingredients</label><br>
+                <input type="checkbox" id="diet2" name="diet2"><label for="diet2">Halal</label><br>
+                <input type="checkbox" id="diet3" name="diet3"><label for="diet3">Vegetarian</label><br>
+                <input type="checkbox" id="diet4" name="diet4"><label for="diet4">Vegan</label><br>
+                <input type="checkbox" id="diet5" name="diet5"><label for="diet5">Lactose free</label><br>
+            </section>
+
+
+
+            <section class="blocks">
+                <h3>Accessibility</h3>
+                <input type="checkbox" id="accessibility1" name="accessibility1"><label for="accessibility1">Wheelchair
+                    OK</label><br>
+                <input type="checkbox" id="accessibility2" name="accessibility2"><label for="accessibility2">Allergen
+                    information</label><br>
+                <input type="checkbox" id="accessibility3" name="accessibility3"><label for="accessibility3">English
+                    OK</label><br>
+                <input type="checkbox" id="accessibility4" name="accessibility4"><label
+                    for="accessibility4">Children/babies OK</label><br>
+            </section>
+
+            <span style="text-align: center;">
+                <section class="blocks">
+                    <a class="underlineLink" href="#">Clear the filters</a><br><br>
+                    <button class="heavyButton" onclick="closeNav()">Search</button>
+                </section>
+            </span>
+
         </aside>
-
-        <button class="openbtn" onclick="openNav()">aa</button>
-
 
         <!-- search bar -->
         <section class="blocks" id="searchBar">
             <input type="text" id="searchInput" placeholder="put some keywords, “Sushi”">
-            <a href="#"><button class="heavyButton" id="searchButton">Search</button></a>
+            <a href="#"><button class="heavyButton" id="searchButton" onclick="saveText()">Search</button></a>
         </section>
 
-        <!-- filters -->
+
+        <!-- title and filters -->
         <section class="headingAndFilters">
-            <h2>Results for "Sushi"</h2>
+            <!-- result text -->
+            <h2><div id="displayText"></div></h2>
+           
             <!-- 2 filters -->
             <nav id="searchNav">
 
                 <!-- filters, as buttons -->
-                <button class="filterIconAndName">
+                <a class="filterIconAndName">
                     <img class="filterIcon" src="../images/icon_sort.svg" alt="">
                     Sort
-                </button>
-                <button class="filterIconAndName" lass="openbtn" onclick="openNav()">
+                    <div id="sorting">
+                        <h4>Sort by</h4>
+                        <input type="radio" id="lowprice" name="sort" value="lowprice">
+                        <label for="lowprice">Price: low to high</label><br>
+                        <input type="radio" id="highprice" name="sort" value="highprice">
+                        <label for="highprice">Price: high to low</label><br>
+                        <input type="radio" id="closest" name="sort" value="closest">
+                        <label for="closest">Distance: closest</label><br>
+                        <input type="radio" id="review" name="sort" value="review">
+                        <label for="review">Highest reviews</label><br>
+                    </div>
+                </a>
+
+                <a class="filterIconAndName" onclick="openNav()">
                     <img class="filterIcon" src="../images/icon_filters.svg" alt="">
                     Filters
-                </button>
+                </a>
 
             </nav>
         </section>
 
+          
+
+
         <!-- thumbnails -->
         <section id="restaurantList">
-            <article class="thumbnails">restaurant 1</article>
-            <article class="thumbnails">restaurant 2</article>
-            <article class="thumbnails">restaurant 3</article>
-            <article class="thumbnails">restaurant 4</article>
-            <article class="thumbnails">restaurant 5</article>
-            <article class="thumbnails">restaurant 6</article>
-            <article class="thumbnails">restaurant 7</article>
-            <article class="thumbnails">restaurant 8</article>
+            <a href="../restaurants/sakae_sushi/" class="thumbnails"><img class="thumbnailImage" src="../images/sakae_sushi_1.JPG" alt=""></a>
+            <a href="../404.html" class="thumbnails"><img class="thumbnailImage" src="../images/sushi_1.jpg" alt=""></a>
+            <a href="../404.html" class="thumbnails"><img class="thumbnailImage" src="../images/sushi_2.jpg" alt=""></a>
+            <a href="../404.html" class="thumbnails"><img class="thumbnailImage" src="../images/sushi_3.jpg" alt=""></a>
+            <a href="../404.html" class="thumbnails"><img class="thumbnailImage" src="../images/sushi_4.jpg" alt=""></a>
+            <a href="../404.html" class="thumbnails"><img class="thumbnailImage" src="../images/sushi_5.jpg" alt=""></a>
+            <a href="../404.html" class="thumbnails"><img class="thumbnailImage" src="../images/sushi_6.jpg" alt=""></a>
+            <a href="../404.html" class="thumbnails"><img class="thumbnailImage" src="../images/sushi_7.jpg" alt=""></a>
+
+
+            
+
         </section>
 
         <footer>
             <p>Is somthing wrong?</p>
-            <a class="underlineLink" href="#">Report a problem</a>
+            <a class="underlineLink" href="../404.html">Report a problem</a>
         </footer>
 
     </main>

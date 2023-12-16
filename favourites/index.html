@@ -21,22 +21,33 @@
             <a href="../map/">
                 <div class="iconBox">
                     <img class="headerIcon" src="../images/icon_map.svg" alt="">
-                    <br>map
+                    <br>Map
                 </div>
             </a>
-            <a href="#">
+            <a href="../favourites/">
                 <div class="iconBox">
                     <img class="headerIcon" src="../images/icon_heart_stroke.svg" alt="">
-                    <br>favourites
+                    <br>Favourites
                 </div>
             </a>
+
+            <div class="iconBox">
+                <img class="headerIcon" src="../images/icon_language.svg" alt=""><br>
+                Language
+                <div class="dropdown-content">
+                    <a href="../404.html">
+                        <p>日本語</p>
+                    </a>
+                    <a href="#">
+                        <p>English</p>
+                    </a>
+                </div>
+            </div>
+
         </nav>
     </header>
 
-
-
     <main>
-
 
 
 
@@ -52,16 +63,16 @@
             <section class="blocks">
                 <h3>Price</h3>
                 <label for="pricemin">from</label><br>
-                <input type="text" id="pricemin" name="pricemin"><br>
+                <input type="text" class="filterText" id="pricemin" name="pricemin" placeholder="2,000"> JPY<br>
                 <label for="pricemax">to</label><br>
-                <input type="text" id="pricemax" name="pricemax">
+                <input type="text" class="filterText" id="pricemax" name="pricemax" placeholder="3,000"> JPY
             </section>
 
             <section class="blocks">
                 <h3>Location</h3>
                 <label for="radius">less than</label><br>
-                <input type="text" id="radius" name="radius"><br>
-                <label for="radius">km from here</label>
+                <input type="text" id="radius" name="radius" class="filterText" placeholder="5">
+                <label for="radius">km<br>from here</label>
             </section>
 
             <section class="blocks">
@@ -103,23 +114,15 @@
             </section>
 
             <span style="text-align: center;">
-            <section class="blocks">
-                <a class="underlineLink" href="#">Clear the filters</a><br><br>
-                <button class="heavyButton">Search</button>
-            </section>
+                <section class="blocks">
+                    <a class="underlineLink" href="#">Clear the filters</a><br><br>
+                    <button class="heavyButton" onclick="closeNav()">Search</button>
+                </section>
             </span>
 
         </aside>
 
-        <!-- <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button> -->
 
-
-        <div class="dropdown">
-            <span>Mouse over me</span>
-            <div class="dropdown-content">
-            <p>Hello World!</p>
-            </div>
-          </div>
 
         <!-- filters -->
         <section class="headingAndFilters">
@@ -131,7 +134,17 @@
                 <button class="filterIconAndName">
                     <img class="filterIcon" src="../images/icon_sort.svg" alt="">
                     Sort
-                    
+                    <div id="sorting">
+                        <h4>Sort by</h4>
+                        <input type="radio" id="lowprice" name="sort" value="lowprice">
+                        <label for="lowprice">Price: low to high</label><br>
+                        <input type="radio" id="highprice" name="sort" value="highprice">
+                        <label for="highprice">Price: high to low</label><br>
+                        <input type="radio" id="closest" name="sort" value="closest">
+                        <label for="closest">Distance: closest</label><br>
+                        <input type="radio" id="review" name="sort" value="review">
+                        <label for="review">Highest reviews</label><br>
+                    </div>
                 </button>
                 <button class="filterIconAndName" onclick="openNav()">
                     <img class="filterIcon" src="../images/icon_filters.svg" alt="">
@@ -143,13 +156,12 @@
 
         <!-- thumbnails -->
         <section id="restaurantList">
-            <article class="thumbnails">restaurant 1</article>
-        </section>
+            <a href="../restaurants/sakae_sushi/" class="thumbnails"><img class="thumbnailImage" src="../images/sakae_sushi_1.JPG" alt=""></a>
 
-        <footer>
-            <p>Is somthing wrong?</p>
-            <a class="underlineLink" href="#">Report a problem</a>
-        </footer>
+            <footer>
+                <p>Is somthing wrong?</p>
+                <a class="underlineLink" href="../404.html">Report a problem</a>
+            </footer>
 
     </main>
 

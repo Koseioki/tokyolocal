@@ -17,6 +17,7 @@
         <a href="../">
             <h1>Tokyo Local</h1>
         </a>
+
         <nav id="topNav">
             <a href="../map/">
                 <div class="iconBox">
@@ -24,10 +25,26 @@
                     <br>map
                 </div>
             </a>
+            <a href="../favourites/">
+                <div class="iconBox">
+                    <img class="headerIcon" src="../images/icon_heart_stroke.svg" alt="">
+                    <br>favourites
+                </div>
+            </a>
+
+            <a href="#">
             <div class="iconBox">
-                <img class="headerIcon" src="../images/icon_heart_stroke.svg" alt="">
-                <br>favourites
+                <img class="headerIcon" src="../images/icon_language.svg" alt=""><br>
+                Language
+                <div class="dropdown-content">
+                    <p>日本語</p>
+                    <p>English</p>
+                </div>
             </div>
+        </a>
+
+
+
         </nav>
     </header>
 
@@ -35,6 +52,11 @@
     <main>
 
 
+        <section class="blocks">
+            <!-- back button -->
+            <button id="backButton" onclick="history.back()" style="display: block; position: relative;">&lt;
+                back</button>
+        </section>
 
         <section class="blocks">
             <h2>Write a review</h2>
@@ -45,9 +67,9 @@
         </section>
 
         <section class="blocks">
-        <h3>Title</h3>
+            <h3>Title</h3>
 
-            <input type="text" placeholder="How was your overall experience?">
+            <input type="text" id="searchInput" placeholder="How was your overall experience?">
         </section>
 
         <section class="blocks">
