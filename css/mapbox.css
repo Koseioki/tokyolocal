@@ -1,0 +1,34 @@
+#sakaeSushi {
+    background-image: url(../images/sakae_sushi_1.jpg);
+    background-size: cover;
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+    border: var(--background) 5px solid;
+    cursor: pointer;
+}
+
+#garretNakano {
+    background-image: url(../images/garret_nakano_1.jpg);
+    background-size: cover;
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+    border: var(--background) 5px solid;
+    cursor: pointer;
+}
+
+#gochi{
+    background-image: url(../images/gochi_1.jpeg);
+    background-size: cover;
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+    border: var(--background) 5px solid;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    /* max-width: 200px; */
+    font-size: 1rem;
+}

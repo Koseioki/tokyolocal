@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uncover Tokyo's hidden-gem restaurants with confidence. Detailed information on each restaurant ensures you can explore the city's diverse food scene fearlessly.">
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script src="../js/js.js"></script>
-    <title>Tokyo Local - My favourites</title>
+    <title>Tokyo Local - my favourites</title>
 
 
 </head>
@@ -115,7 +116,7 @@
 
             <span style="text-align: center;">
                 <section class="blocks">
-                    <a class="underlineLink" href="#">Clear the filters</a><br><br>
+                    <a class="underlineLink">Clear the filters</a><br><br>
                     <button class="heavyButton" onclick="closeNav()">Search</button>
                 </section>
             </span>
@@ -128,10 +129,10 @@
         <section class="headingAndFilters">
             <h2>My favourites</h2>
             <!-- 2 filters -->
-            <nav id="searchNav">
+             <nav id="searchNav">
 
                 <!-- filters, as buttons -->
-                <button class="filterIconAndName">
+                <a class="filterIconAndName">
                     <img class="filterIcon" src="../images/icon_sort.svg" alt="">
                     Sort
                     <div id="sorting">
@@ -145,19 +146,21 @@
                         <input type="radio" id="review" name="sort" value="review">
                         <label for="review">Highest reviews</label><br>
                     </div>
-                </button>
-                <button class="filterIconAndName" onclick="openNav()">
+                </a>
+
+                <a class="filterIconAndName" onclick="openNav()">
                     <img class="filterIcon" src="../images/icon_filters.svg" alt="">
                     Filters
-                </button>
+                </a>
 
             </nav>
         </section>
 
         <!-- thumbnails -->
         <section id="restaurantList">
-            <a href="../restaurants/sakae_sushi/" class="thumbnails"><img class="thumbnailImage" src="../images/sakae_sushi_1.JPG" alt=""></a>
-
+            <a href="../restaurants/sakae_sushi/" class="thumbnails" aria-label="Check more about Sakae sushi">
+                <img class="thumbnailImage" src="../images/sakae_sushi_1.jpg" alt="A bowl of sashimi, with octopus, cucbumber, shrimps, tuna, wasabi">
+            </a>
             <footer>
                 <p>Is somthing wrong?</p>
                 <a class="underlineLink" href="../404.html">Report a problem</a>

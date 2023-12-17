@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uncover Tokyo's hidden-gem restaurants with confidence. Detailed information on each restaurant ensures you can explore the city's diverse food scene fearlessly.">
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mapbox.css">
     <script src="../js/js.js"></script>
 
-<!-- mapbox start -->
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
-<!-- mapbox end -->
-    <title>Tokyo Local - Map</title>
+    <!-- mapbox start -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- mapbox end -->
+    <title>Tokyo Local - map</title>
 
 
 </head>
@@ -23,31 +25,117 @@
             <h1>Tokyo Local</h1>
         </a>
         <nav id="topNav">
-            <a href="#">
+            <a href="../map/">
                 <div class="iconBox">
                     <img class="headerIcon" src="../images/icon_map.svg" alt="">
-                    <br>map
+                    <br>Map
                 </div>
             </a>
+            <a href="../favourites/">
+                <div class="iconBox">
+                    <img class="headerIcon" src="../images/icon_heart_stroke.svg" alt="">
+                    <br>Favourites
+                </div>
+            </a>
+
             <div class="iconBox">
-                <img class="headerIcon" src="../images/icon_heart_stroke.svg" alt="">
-                <br>favourites
+                <img class="headerIcon" src="../images/icon_language.svg" alt=""><br>
+                Language
+                <div class="dropdown-content">
+                    <a href="../404.html">
+                        <p>日本語</p>
+                    </a>
+                    <a href="#">
+                        <p>English</p>
+                    </a>
+                </div>
             </div>
+
         </nav>
     </header>
 
 
     <!-- mapbox start -->
-<div id='map' style='width: 100%; height: 100vh;'></div>
-<script>
-  mapboxgl.accessToken = 'pk.eyJ1Ijoia29zZWlva2kxMjI1IiwiYSI6ImNscTR4NWVrcjBkZjAya251cjNxNXZldjkifQ.C7-RdmZtjiSsgsV_-M3JKw';
-  var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11'
-  });
-</script>
+    <div id='map' style='width: 100%; height: 100vh;'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoia29zZWlva2kxMjI1IiwiYSI6ImNscTR4NWVrcjBkZjAya251cjNxNXZldjkifQ.C7-RdmZtjiSsgsV_-M3JKw';
+        const centre = [139.73923782399157, 35.687519659854736];
 
-<!-- mapbox end -->
+        // const monument = [35.6419, 139.6466];
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: centre,
+            zoom: 11
+        });
+
+
+        const sakaeSushi = [139.6466, 35.6419];
+
+        // create the popup
+        const popup1 = new mapboxgl.Popup({ offset: 25 }).setText(
+            'Sakae Sushi'
+        );
+
+        // create DOM element for the marker
+        const el1 = document.createElement('div');
+        el1.id = 'sakaeSushi';
+
+        // create the marker
+        new mapboxgl.Marker(el1)
+            .setLngLat(sakaeSushi)
+            .setPopup(popup1) // sets a popup on this marker
+            .addTo(map);
+
+
+
+
+        const garretNakano = [139.6664236588944, 35.70842570114972];
+
+        // create the popup
+        const popup2 = new mapboxgl.Popup({ offset: 25 }).setText(
+            'Garret Nakano'
+        );
+
+        // create DOM element for the marker
+        const el2 = document.createElement('div');
+        el2.id = 'garretNakano';
+
+        new mapboxgl.Marker(el2)
+            .setLngLat(garretNakano)
+            .setPopup(popup2) // sets a popup on this marker
+            .addTo(map);
+
+
+
+            
+        const gochi = [139.7295107754755, 35.66435793402259];
+
+        // create the popup
+        const popup3 = new mapboxgl.Popup({ offset: 25 }).setText(
+            'Dining & bar Gochi'
+        );
+
+        // create DOM element for the marker
+        const el3 = document.createElement('div');
+        el3.id = 'gochi';
+
+        new mapboxgl.Marker(el3)
+            .setLngLat(gochi)
+            .setPopup(popup3) // sets a popup on this marker
+            .addTo(map);
+
+
+
+    </script>
+    <!-- mapbox end -->
+
+
+
+    <footer>
+        <p>Is somthing wrong?</p>
+        <a class="underlineLink" href="../404.html">Report a problem</a>
+    </footer>
 
 </body>
 

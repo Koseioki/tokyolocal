@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
-
+    <meta name="description" content="Uncover Tokyo's hidden-gem restaurants with confidence. Detailed information on each restaurant ensures you can explore the city's diverse food scene fearlessly.">
+    <script src="js/js.js"></script>
     <title>Tokyo Local</title>
 
 
@@ -21,15 +22,29 @@
             <a href="map/">
                 <div class="iconBox">
                     <img class="headerIcon" src="images/icon_map.svg" alt="">
-                    <br>map
+                    <br>Map
                 </div>
             </a>
             <a href="favourites/">
                 <div class="iconBox">
                     <img class="headerIcon" src="images/icon_heart_stroke.svg" alt="">
-                    <br>favourites
+                    <br>Favourites
                 </div>
             </a>
+
+            <div class="iconBox">
+                <img class="headerIcon" src="images/icon_language.svg" alt=""><br>
+                Language
+                <div class="dropdown-content">
+                    <a href="404.html">
+                        <p>日本語</p>
+                    </a>
+                    <a href="#">
+                        <p>English</p>
+                    </a>
+                </div>
+            </div>
+
         </nav>
     </header>
 
@@ -39,7 +54,7 @@
         <article id="elevatorPitch">
             <h2>Taste Tokyo like a local</h2>
             <p>You will find non-touristic, authentic, local-based restaurants</p><br>
-            <a href="#searchNav"><button class="lightButton" id="exploreNow">Explore now</button></a>
+            <a href="#searchBar"><button class="lightButton" id="exploreNow">Explore now</button></a>
         </article>
     </section>
 
@@ -110,54 +125,108 @@
 
             <span style="text-align: center;">
                 <section class="blocks">
-                    <a class="underlineLink" href="#">Clear the filters</a><br><br>
+                    <a class="underlineLink">Clear the filters</a><br><br>
                     <button class="heavyButton" onclick="closeNav()">Search</button>
                 </section>
             </span>
 
         </aside>
 
-
         <!-- search bar -->
         <section class="blocks" id="searchBar">
             <input type="text" id="searchInput" placeholder="put some keywords, “Sushi”">
-            <a href="search/"><button class="heavyButton" id="searchButton">Search</button></a>
+            <a href="search/"><button class="heavyButton" id="searchButton" onclick="saveText()">Search</button></a>
         </section>
 
-        <!-- filters -->
+        <script>
+            function saveText() {
+              // Get the input value
+              var inputText = document.getElementById('searchInput').value;
+        
+                // Store the text in localStorage
+                localStorage.setItem('savedText', inputText);
+            }
+          </script>
+
+
+        <!-- title and filters -->
         <section class="headingAndFilters">
+            <!-- result text -->
             <h2>Discover</h2>
+           
             <!-- 2 filters -->
             <nav id="searchNav">
 
                 <!-- filters, as buttons -->
-                <button class="filterIconAndName">
+                <a class="filterIconAndName">
                     <img class="filterIcon" src="images/icon_sort.svg" alt="">
                     Sort
-                </button>
-                <button class="filterIconAndName" onclick="openNav()">
+                    <div id="sorting">
+                        <h4>Sort by</h4>
+                        <input type="radio" id="lowprice" name="sort" value="lowprice">
+                        <label for="lowprice">Price: low to high</label><br>
+                        <input type="radio" id="highprice" name="sort" value="highprice">
+                        <label for="highprice">Price: high to low</label><br>
+                        <input type="radio" id="closest" name="sort" value="closest">
+                        <label for="closest">Distance: closest</label><br>
+                        <input type="radio" id="review" name="sort" value="review">
+                        <label for="review">Highest reviews</label><br>
+                    </div>
+                </a>
+
+                <a class="filterIconAndName" onclick="openNav()">
                     <img class="filterIcon" src="images/icon_filters.svg" alt="">
                     Filters
-                </button>
+                </a>
 
             </nav>
         </section>
 
         <section id="restaurantList">
-            <a href="restaurants/sakae_sushi/" class="thumbnails"><img class="thumbnailImage" src="images/sakae_sushi_1.JPG" alt=""></a>
-            <a href="#" class="thumbnails"><img class="thumbnailImage" src="images/garret_nakano_1.jpg" alt=""></a>
-            <a href="#" class="thumbnails"><img class="thumbnailImage" src="images/gochi_1.jpeg" alt=""></a>
-            <a href="#" class="thumbnails"><img class="thumbnailImage" src="images/random_1.jpg" alt=""></a>
-            <a href="#" class="thumbnails"><img class="thumbnailImage" src="images/random_2.jpg" alt=""></a>
-            <a href="#" class="thumbnails"><img class="thumbnailImage" src="images/random_3.jpg" alt=""></a>
-            <a href="#" class="thumbnails"><img class="thumbnailImage" src="images/random_4.jpg" alt=""></a>
-            <a href="#" class="thumbnails"><img class="thumbnailImage" src="images/random_5.jpg" alt=""></a>
-            <a href="#" class="thumbnails"><img class="thumbnailImage" src="images/random_6.jpg" alt=""></a>
-            <a href="#" class="thumbnails"><img class="thumbnailImage" src="images/random_7.jpg" alt=""></a>
-            <a href="#" class="thumbnails"><img class="thumbnailImage" src="images/random_8.jpg" alt=""></a>
-            <a href="#" class="thumbnails"><img class="thumbnailImage" src="images/random_9.jpg" alt=""></a>
-            <a href="#" class="thumbnails"><img class="thumbnailImage" src="images/random_10.jpg" alt=""></a>
-            <a href="#" class="thumbnails"><img class="thumbnailImage" src="images/random_11.jpg" alt=""></a>
+            <a href="restaurants/sakae_sushi/" class="thumbnails" aria-label="Check more about Sakae sushi">
+                <img class="thumbnailImage" src="images/sakae_sushi_1.jpg" alt="A bowl of sashimi, with octopus, cucbumber, shrimps, tuna, wasabi">
+            </a>
+            <a href="restaurants/garret_nakano/" class="thumbnails" aria-label="Check more about Garret Nakano">
+                <img class="thumbnailImage" src="images/garret_nakano_1.jpg" alt="lettuce and some raw fish, wrapped in some yellow sheet">
+            </a>
+            <a href="restaurants/gochi/" class="thumbnails" aria-label="Check more about Gochi">
+                <img class="thumbnailImage" src="images/gochi_1.jpeg" alt="yellow coloured soup, and urchin on the top of it">
+            </a>
+            <a href="404.html" class="thumbnails" aria-label="this link is not available">
+                <img class="thumbnailImage" src="images/random_1.jpg" alt="a picture of food, but this link is not available">
+            </a>
+            <a href="404.html" class="thumbnails" aria-label="this link is not available">
+                <img class="thumbnailImage" src="images/random_2.jpg" alt="a picture of food, but this link is not available">
+            </a>
+            <a href="404.html" class="thumbnails" aria-label="this link is not available">
+                <img class="thumbnailImage" src="images/random_3.jpg" alt="a picture of food, but this link is not available">
+            </a>
+            <a href="404.html" class="thumbnails" aria-label="this link is not available">
+                <img class="thumbnailImage" src="images/random_4.jpg" alt="a picture of food, but this link is not available">
+            </a>
+            <a href="404.html" class="thumbnails" aria-label="this link is not available">
+                <img class="thumbnailImage" src="images/random_5.jpg" alt="a picture of food, but this link is not available">
+            </a>
+            <a href="404.html" class="thumbnails" aria-label="this link is not available">
+                <img class="thumbnailImage" src="images/random_6.jpg" alt="a picture of food, but this link is not available">
+            </a>
+            <a href="404.html" class="thumbnails" aria-label="this link is not available">
+                <img class="thumbnailImage" src="images/random_7.jpg" alt="a picture of food, but this link is not available">
+            </a>
+            <a href="404.html" class="thumbnails" aria-label="this link is not available">
+                <img class="thumbnailImage" src="images/random_8.jpg" alt="a picture of food, but this link is not available">
+            </a>
+            <a href="404.html" class="thumbnails" aria-label="this link is not available">
+                <img class="thumbnailImage" src="images/random_9.jpg" alt="a picture of food, but this link is not available">
+            </a>
+            <a href="404.html" class="thumbnails" aria-label="this link is not available">
+                <img class="thumbnailImage" src="images/random_10.jpg" alt="a picture of food, but this link is not available">
+            </a>
+            <a href="404.html" class="thumbnails" aria-label="this link is not available">
+                <img class="thumbnailImage" src="images/random_11.jpg" alt="a picture of food, but this link is not available">
+            </a>
+            
+
 
             
 
@@ -165,12 +234,12 @@
 
         <footer>
             <p>Is somthing wrong?</p>
-            <a class="underlineLink" href="#">Report a problem</a>
+            <a class="underlineLink" href="404.html">Report a problem</a>
         </footer>
 
     </main>
 
 </body>
 
-<script src="js/js.js"></script>
+
 </html>

@@ -15,6 +15,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 a {
     color: var(--text);
     text-decoration: none;
@@ -25,7 +29,6 @@ body {
     color: var(--text);
     font-size: 1rem;
     line-height: 1.5rem;
-    scroll-behavior: smooth;
 }
 
 
@@ -33,6 +36,10 @@ p {
     /* margin: 10px 0 10px 0; */
 }
 
+/* undisplay english version */
+#en {
+    display: none;
+}
 
 
 /* title "Tokyo Local" */
@@ -51,6 +58,7 @@ h1 {
 h2 {
     /* original: 20px */
     font-size: 1.7rem;
+    line-height: 1.7rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
@@ -98,6 +106,7 @@ button {}
     font-size: 1rem;
     cursor: pointer;
     border: var(--accent) 1.5px solid;
+    color: var(--text);
     background-color: var(--background);
     /* transition: 0.3s; */
 }
@@ -431,6 +440,7 @@ ul {
 
 /* restaurant pages - add to my favourites button */
 #addToFavourites {
+    margin-left: 20px;
     background-color: var(--accent);
     color: var(--background);
     height: 40px;
@@ -499,6 +509,11 @@ footer {
     transform: translate(-50%, 50%);
 }
 
+/* the scalars on the restaurant pages */
+.scalar{
+    text-align: center;
+
+}
 
 /* swiper */
 .swiper {
@@ -727,5 +742,11 @@ footer {
         width: 23%;
         aspect-ratio: 1 / 1 !important;
     }
+
+    /* the scalars on the restaurant pages */
+.scalar{
+    text-align: left;
+
+}
 
 }

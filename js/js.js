@@ -9,90 +9,23 @@
 })(document);
 
 
-// Set marker options.
-// const marker = new mapboxgl.Marker({
-//   color: "#FFFFFF",
-//   draggable: true
-// }).setLngLat([30.5, 50.5])
-//   .addTo(map);
-
-// initialise swiper
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
-
-
 // sidebar
 function openNav() {
   document.getElementById("mySidebar").style.width = "280px";
-  document.getElementById("main").style.marginLeft = "280px";
+  // document.getElementById("main").style.marginLeft = "280px";
 }
 
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
+  // document.getElementById("main").style.marginLeft= "0";
 }
 
-//smooth scroll
-document.addEventListener("DOMContentLoaded", function() {
-  var links = document.querySelectorAll('a');
-
-  links.forEach(function(each) {
-      each.onclick = scrollSmoothly;
-  });
-
-  function scrollSmoothly(e) {
-      e.preventDefault();
-      var targetId = this.getAttribute('href');
-      document.querySelector(targetId).scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-      });
-  }
-});
-
-
-// display the result
-function saveText() {
-  // Get the input value
-  var inputText = document.getElementById('searchInput').value;
-
-    // Store the text in localStorage
-    localStorage.setItem('savedText', inputText);
-    
-    // Update the displayed text
-    // displaySavedText();
-
+function japanese() {
+  document.getElementById("jp").style.display = "block";
+  document.getElementById("en").style.display = "none";
 }
 
-function displaySavedText() {
-
-    // Retrieve the saved text from localStorage
-    var savedText = localStorage.getItem('savedText');
-
-    // Display the saved text in the HTML
-    var displayDiv = document.getElementById('displayText');
-    displayDiv.innerHTML = 'Results for "' + savedText + '"';
+function english() {
+  document.getElementById("jp").style.display = "none";
+  document.getElementById("en").style.display = "block";
 }
-
-// Call the displaySavedText function when the page loads to show any previously saved text
-displaySavedText();
-

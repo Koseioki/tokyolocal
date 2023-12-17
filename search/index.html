@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <meta name="description" content="Uncover Tokyo's hidden-gem restaurants with confidence. Detailed information on each restaurant ensures you can explore the city's diverse food scene fearlessly.">
     <script src="../js/js.js"></script>
-    <title>Tokyo Local</title>
+    <title>Tokyo Local - search</title>
 
 
 </head>
@@ -115,7 +116,7 @@
 
             <span style="text-align: center;">
                 <section class="blocks">
-                    <a class="underlineLink" href="#">Clear the filters</a><br><br>
+                    <a class="underlineLink">Clear the filters</a><br><br>
                     <button class="heavyButton" onclick="closeNav()">Search</button>
                 </section>
             </span>
@@ -131,8 +132,37 @@
 
         <!-- title and filters -->
         <section class="headingAndFilters">
+            
             <!-- result text -->
             <h2><div id="displayText"></div></h2>
+
+            <script>
+                function saveText() {
+                  // Get the input value
+                  var inputText = document.getElementById('searchInput').value;
+            
+                    // Store the text in localStorage
+                    localStorage.setItem('savedText', inputText);
+                    
+                    // Update the displayed text
+                    displaySavedText();
+            
+                }
+            
+                function displaySavedText() {
+            
+                    // Retrieve the saved text from localStorage
+                    var savedText = localStorage.getItem('savedText');
+            
+                    // Display the saved text in the HTML
+                    var displayDiv = document.getElementById('displayText');
+                    displayDiv.innerHTML = 'Results for "' + savedText + '"';
+                }
+            
+                // Call the displaySavedText function when the page loads to show any previously saved text
+                displaySavedText();
+              </script>
+
            
             <!-- 2 filters -->
             <nav id="searchNav">
@@ -167,14 +197,15 @@
 
         <!-- thumbnails -->
         <section id="restaurantList">
-            <a href="../restaurants/sakae_sushi/" class="thumbnails"><img class="thumbnailImage" src="../images/sakae_sushi_1.JPG" alt=""></a>
-            <a href="../404.html" class="thumbnails"><img class="thumbnailImage" src="../images/sushi_1.jpg" alt=""></a>
-            <a href="../404.html" class="thumbnails"><img class="thumbnailImage" src="../images/sushi_2.jpg" alt=""></a>
-            <a href="../404.html" class="thumbnails"><img class="thumbnailImage" src="../images/sushi_3.jpg" alt=""></a>
-            <a href="../404.html" class="thumbnails"><img class="thumbnailImage" src="../images/sushi_4.jpg" alt=""></a>
-            <a href="../404.html" class="thumbnails"><img class="thumbnailImage" src="../images/sushi_5.jpg" alt=""></a>
-            <a href="../404.html" class="thumbnails"><img class="thumbnailImage" src="../images/sushi_6.jpg" alt=""></a>
-            <a href="../404.html" class="thumbnails"><img class="thumbnailImage" src="../images/sushi_7.jpg" alt=""></a>
+            <a href="../restaurants/sakae_sushi/" class="thumbnails" aria-label="Check more about Sakae sushi">
+                <img class="thumbnailImage" src="../images/sakae_sushi_1.jpg" alt="A bowl of sashimi, with octopus, cucbumber, shrimps, tuna, wasabi">
+            <a href="../404.html" class="thumbnails" aria-label="this link is not available"><img class="thumbnailImage" src="../images/sushi_1.jpg" alt="a picture of food, but this link is not available"></a>
+            <a href="../404.html" class="thumbnails" aria-label="this link is not available"><img class="thumbnailImage" src="../images/sushi_2.jpg" alt="a picture of food, but this link is not available"></a>
+            <a href="../404.html" class="thumbnails" aria-label="this link is not available"><img class="thumbnailImage" src="../images/sushi_3.jpg" alt="a picture of food, but this link is not available"></a>
+            <a href="../404.html" class="thumbnails" aria-label="this link is not available"><img class="thumbnailImage" src="../images/sushi_4.jpg" alt="a picture of food, but this link is not available"></a>
+            <a href="../404.html" class="thumbnails" aria-label="this link is not available"><img class="thumbnailImage" src="../images/sushi_5.jpg" alt="a picture of food, but this link is not available"></a>
+            <a href="../404.html" class="thumbnails" aria-label="this link is not available"><img class="thumbnailImage" src="../images/sushi_6.jpg" alt="a picture of food, but this link is not available"></a>
+
 
 
             
@@ -189,5 +220,4 @@
     </main>
 
 </body>
-
 </html>
