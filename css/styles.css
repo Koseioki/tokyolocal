@@ -443,12 +443,13 @@ ul {
     margin-left: 20px;
     background-color: var(--accent);
     color: var(--background);
-    height: 40px;
+    min-height: 40px;
+    max-height: 55px;
     font-size: 1rem;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    padding: 0 20px;
+    padding: 10px 20px;
     /* line-height: 1rem; */
     display: flex;
     flex-wrap: nowrap;
