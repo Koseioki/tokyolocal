@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <meta name="description" content="Uncover Tokyo's hidden-gem restaurants with confidence. Detailed information on each restaurant ensures you can explore the city's diverse food scene fearlessly.">
     <script src="js/js.js"></script>
     <title>Tokyo Local</title>
@@ -50,13 +50,14 @@
 
 
     <!-- elevator pitch with background image -->
-    <section id="elevatorPitchCover">
+    <div id="elevatorPitchCover">
         <article id="elevatorPitch">
             <h2>Taste Tokyo like a local</h2>
             <p>You will find non-touristic, authentic, local-based restaurants</p><br>
-            <a href="#searchBar"><button class="lightButton" id="exploreNow">Explore now</button></a>
+            <!-- <a href="#searchBar"><button class="lightButton" id="exploreNow">Explore now</button></a> -->
+            <a class="lightButton" id="exploreNow" href="#searchBar">Explore now</a> 
         </article>
-    </section>
+    </div>
 
     <main>
 
@@ -123,20 +124,21 @@
                     for="accessibility4">Children/babies OK</label><br>
             </section>
 
-            <span style="text-align: center;">
-                <section class="blocks">
+            <!-- <span style="text-align: center;"> -->
+                <div class="blocks" style="text-align: center;">
                     <a class="underlineLink">Clear the filters</a><br><br>
                     <button class="heavyButton" onclick="closeNav()">Search</button>
-                </section>
-            </span>
+                </div>
+            <!-- </span> -->
 
         </aside>
 
         <!-- search bar -->
-        <section class="blocks" id="searchBar">
+        <div class="blocks" id="searchBar">
             <input type="text" id="searchInput" placeholder="put some keywords, “Sushi”">
             <a href="search/"><button class="heavyButton" id="searchButton" onclick="saveText()">Search</button></a>
-        </section>
+            <!-- <a class="heavyButton" id="searchButton" onclick="saveText()" href="search/">Search</a> -->
+        </div>
 
         <script>
             function saveText() {
@@ -158,7 +160,7 @@
             <nav id="searchNav">
 
                 <!-- filters, as buttons -->
-                <a class="filterIconAndName">
+                <div class="filterIconAndName">
                     <img class="filterIcon" src="images/icon_sort.svg" alt="">
                     Sort
                     <div id="sorting">
@@ -172,7 +174,7 @@
                         <input type="radio" id="review" name="sort" value="review">
                         <label for="review">Highest reviews</label><br>
                     </div>
-                </a>
+                </div>
 
                 <a class="filterIconAndName" onclick="openNav()">
                     <img class="filterIcon" src="images/icon_filters.svg" alt="">
@@ -182,7 +184,7 @@
             </nav>
         </section>
 
-        <section id="restaurantList">
+        <div id="restaurantList">
             <a href="restaurants/sakae_sushi/" class="thumbnails" aria-label="Check more about Sakae sushi">
                 <img class="thumbnailImage" src="images/sakae_sushi_1.jpg" alt="A bowl of sashimi, with octopus, cucbumber, shrimps, tuna, wasabi">
             </a>
@@ -230,7 +232,7 @@
 
             
 
-        </section>
+        </div>
 
         <footer>
             <p>Is somthing wrong?</p>

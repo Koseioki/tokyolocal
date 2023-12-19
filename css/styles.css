@@ -147,7 +147,11 @@ button {}
 #searchButton {
     border-radius: 10px;
     margin: 10px 0 0 0;
-
+    /* display: inline-block;
+    text-align: center;
+    padding: 8.5px 0; */
+    /* height: auto; */
+    /* width: 100%; */
 
 }
 
@@ -327,6 +331,9 @@ ul {
 /* exlore now button, inherit light button */
 #exploreNow {
     width: 250px;
+    display: inline-block;
+    padding: 8.5px 0;
+    height: auto;
 
 }
 
